@@ -5,7 +5,7 @@ import User from "./user";
 
 
 const Users = () => {
-  const [{ users }, dispatch] = useStateValue();
+  const [{ users }] = useStateValue();
   const [query, setQuery] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(users);
   

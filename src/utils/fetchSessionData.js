@@ -1,5 +1,3 @@
-import { firebaseGetAllUsers } from "../Firebase";
-
 export const fetchSessionUser = () => {
   const user =
     localStorage.getItem("user") !== "undefined"

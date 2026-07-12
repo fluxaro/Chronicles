@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useStateValue } from "../../context/StateProvider";
 
 const ContactHeader = () => {
-  const [{}, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   return (
     <div className="w-full flex flex-row-reverse items-center bg-white justify-between px-4 py-2 cursor-pointer">
       <motion.div

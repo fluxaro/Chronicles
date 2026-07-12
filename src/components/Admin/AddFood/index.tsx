@@ -8,7 +8,6 @@ import {
   MdOutlineProductionQuantityLimits,
 } from "react-icons/md";
 import {
-  firebaseFetchFoodItems,
   firebaseRemoveUploadedImage,
   firebaseSaveProduct,
 } from "../../../Firebase";
@@ -32,7 +31,7 @@ const AddFood = () => {
   const [quantity, setQuantity] = useState("");
   const [description, setDescription] = useState("");
   const [loaderMessage, setLoadermessage] = useState("");
-  const [{ foodItems }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   const deleteImage = () => {
     setLoadermessage("Removing Photo......");

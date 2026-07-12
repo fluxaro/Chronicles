@@ -28,7 +28,7 @@ const Sidenav = ({
 };
 
 const SidenavHeader = () => {
-  const [{ adminMode }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   return (
     <motion.div
       initial={{ opacity: 0, x: 200 }}

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useStateValue } from "../../../context/StateProvider";
 
 const Menu = () => {
-    const [{ foodItems }, dispatch] = useStateValue();
+    const [{ foodItems }] = useStateValue();
     const [query, setQuery] = useState("");
     const [filteredFoodItems, setFilteredFoodItems] = useState<FoodItem[]>(foodItems);
     

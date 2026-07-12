@@ -8,7 +8,7 @@ import { useStateValue } from "../../context/StateProvider";
 
 const CartItem = ({ item }: { item: cartItem }) => {
   const [{ foodItems, cartItems }, dispatch] = useStateValue();
-  const { id, fid, qty } = item;
+  const { fid, qty } = item;
   const foodItem = getFoodyById(foodItems, fid);
 
   return (

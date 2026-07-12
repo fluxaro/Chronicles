@@ -10,7 +10,7 @@ export const SingleFoodItem = ({
   col?: boolean;
   admin?:boolean
 }) => {
-  const { id, title, price, calories, imageURL, description } = item;
+  const { title, price, calories, imageURL, description } = item;
 
   return (
     <motion.div

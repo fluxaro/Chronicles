@@ -13,7 +13,7 @@ import { useStateValue } from "../../context/StateProvider";
 const Header = () => {
   // 
   // const firebaseAuth = getAuth(app);
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
 

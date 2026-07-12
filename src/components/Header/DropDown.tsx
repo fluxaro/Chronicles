@@ -8,7 +8,7 @@ import { isAdmin, logout, ToggleAdminMode } from "../../utils/functions";
 
 const DropDown = ({ user }: { user: any;}) => {
   const navigate = useNavigate();
-  const [{}, dispatch]  = useStateValue();
+  const [, dispatch]  = useStateValue();
 
   return (
     <motion.div

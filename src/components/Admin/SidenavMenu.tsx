@@ -102,7 +102,7 @@ const NavItem = ({
     setActivePage(title);
     setPageContent(pageContent);
   };
-  const [{users, foodItems}, dispatch] = useStateValue()
+  const [{users, foodItems}] = useStateValue()
   return (
     <motion.div
       whileTap={{ scale: 1.1 }}

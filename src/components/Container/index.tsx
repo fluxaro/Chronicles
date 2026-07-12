@@ -15,7 +15,7 @@ const Container = ({scrollOffset, col, items, className }: {scrollOffset:number,
       containerRef.current.scrollLeft += scrollOffset
     }
   }, [scrollOffset]);
-  const [{user}, dispatch] = useStateValue();
+  const [{user}] = useStateValue();
   return (
     <motion.div
       ref = {containerRef}

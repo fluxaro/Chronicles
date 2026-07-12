@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Container from "../../Container";
 import { FilterFood } from "../../../utils/filters";
@@ -8,8 +8,8 @@ import { useStateValue } from "../../../context/StateProvider";
 
 const Menu = ({title}:{title?:string}) => {
 
-  const [scrollValue, setScrollValue] = useState(0);
-  const [{ foodItems }, dispatch] = useStateValue();
+  const [scrollValue] = useState(0);
+  const [{ foodItems }] = useStateValue();
   const [filter, setFilter] = useState<string>("all");
     
   return (
