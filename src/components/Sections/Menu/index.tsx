@@ -15,7 +15,7 @@ const Menu = ({title}:{title?:string}) => {
   return (
     <section className="w-full my-5" id="menu">
       <div className="w-full flex items-center justify-center">
-        <Title title={title || "Our Hot Dishes"} center />
+        <Title title={title || "Full Abakaliki menu"} center />
       </div>
       <Filters filter={filter} setFilter = {setFilter} />
       <Container

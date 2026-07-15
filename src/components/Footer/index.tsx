@@ -1,101 +1,64 @@
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter,
-} from "react-icons/bs";
-
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Logo } from "../Assets";
-import React from "react";
-import { motion } from "framer-motion";
+import { restaurantInfo } from "../../utils/menuData";
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-primary sm:p-6 w-full">
-      <div className="flex justify-center md:justify-start items-center">
-        <motion.div  whileHover={{ rotate: [0, -10, 10, -10, 0] }} className="mb-3 md:mb-0">
-          <Link to="/" className="flex gap-8 items-center">
-            <motion.img
-              whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-              src={Logo}
-              className="w-10 md:w-36 object-contain"
-              alt="Logo"
-            />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-headingColor">
-              Chronicles
-            </span>
+    <footer className="mt-8 p-4 sm:p-6 w-full border-t border-orange-100">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-4">
+        <div className="flex flex-col gap-3">
+          <Link to="/" className="flex items-center gap-3 w-fit">
+            <img src={Logo} className="w-10 h-10 object-contain" alt="Chronicles" />
+            <span className="text-xl font-semibold text-headingColor">Chronicles</span>
           </Link>
-        </motion.div>
-      </div>
-      <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
-        <span className="text-sm text-gray-500 text-center dark:text-gray-400">
-          © {" "}
-            {
-              new Date().getFullYear()
-            }    
-           {" "}Chronicles™. All Rights Reserved. <a href="https://github.com/numcodes">Created by Numcodes</a>
-        </span>
-        <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0 md:text-xl">
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="#"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
+          <p className="text-sm text-textColor leading-relaxed max-w-xs">
+            {restaurantInfo.tagline} — Nigerian meals from {restaurantInfo.city},{" "}
+            {restaurantInfo.state}.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <p className="text-sm font-semibold text-headingColor uppercase tracking-wide">
+            Explore
+          </p>
+          <nav className="flex flex-col gap-2 text-sm text-textColor">
+            <Link to="/menu" className="hover:text-orange-600 w-fit">Menu</Link>
+            <Link to="/about" className="hover:text-orange-600 w-fit">About</Link>
+            <Link to="/services" className="hover:text-orange-600 w-fit">Services</Link>
+            <a href="/#visit" className="hover:text-orange-600 w-fit">Visit</a>
+          </nav>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <p className="text-sm font-semibold text-headingColor uppercase tracking-wide">
+            Contact
+          </p>
+          <p className="text-sm text-textColor">{restaurantInfo.address}</p>
+          <a
+            href={`tel:${restaurantInfo.phone.replace(/\s/g, "")}`}
+            className="text-sm text-textColor hover:text-orange-600 w-fit"
           >
-            <BsDribbble />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="https://github.com/numcodes"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsGithub />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="https://linkedin.com/in/ugochukwu-nweze-08812a2b8"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsLinkedin />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="https://x.com/CodesNum80638"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsTwitter />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="https://www.instagram.com/num_codes"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsInstagram />
-          </motion.a>
-          <motion.a
-            whileTap={{ scale: 1.1 }}
-            target={"_blank"}
-            rel="noreferrer"
-            href="#"
-            className="text-textColor h-10 w-10 bg-primary rounded-full flex items-center justify-center"
-          >
-            <BsFacebook />
-          </motion.a>
+            {restaurantInfo.phone}
+          </a>
+          <div className="flex gap-4 mt-1 text-lg text-textColor">
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-orange-600">
+              <BsInstagram />
+            </a>
+            <a href="https://x.com/" target="_blank" rel="noreferrer" aria-label="Twitter" className="hover:text-orange-600">
+              <BsTwitter />
+            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:text-orange-600">
+              <BsFacebook />
+            </a>
+          </div>
         </div>
       </div>
+
+      <hr className="my-4 border-orange-100" />
+      <p className="text-sm text-lightGray text-center md:text-left pb-2">
+        © {new Date().getFullYear()} Chronicles. All rights reserved.
+      </p>
     </footer>
   );
 };

@@ -76,22 +76,25 @@ export const fetchUserCartData = async (user: any, dispatch: any) => {
         console.log(e);
       });
   } else {
-    localStorage.setItem("cartItems", "undefined");
+    localStorage.removeItem("cartItems");
   }
 };
 
 export const fetchFoodData = async (dispatch: any) => {
-  await firebaseFetchFoodItems()
-    .then((data) => {
-      dispatch({
-        type: "SET_FOOD_ITEMS",
-        foodItems: data,
-      });
-    })
-    .then(() => {})
-    .catch((e) => {
-      console.log(e);
+  const { abakalikiMenu } = await import("./menuData");
+  try {
+    const data = await firebaseFetchFoodItems();
+    dispatch({
+      type: "SET_FOOD_ITEMS",
+      foodItems: data && data.length > 0 ? data : abakalikiMenu,
     });
+  } catch (e) {
+    console.log(e);
+    dispatch({
+      type: "SET_FOOD_ITEMS",
+      foodItems: abakalikiMenu,
+    });
+  }
 };
 
 export const getFoodyById = (menu: FoodItem[], fid: number) => {
@@ -265,8 +268,8 @@ export const logout = async (user: any, dispatch: any, navigate: any) => {
           adminMode: false,
         });
 
-        localStorage.setItem("user", "undefined");
-        localStorage.setItem("adminMode", "undefined");
+        localStorage.removeItem("user");
+        localStorage.removeItem("adminMode");
         localStorage.removeItem("cartItems");
         navigate("/");
       })

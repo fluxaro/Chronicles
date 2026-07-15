@@ -65,7 +65,7 @@ const MobileNav = ({
         <Link onClick={() => setIsOpen(!isOpen)} to={'/menu'} className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10">
           Menu
         </Link>
-        <Link onClick={() => setIsOpen(!isOpen)} to={'services'} className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10">
+        <Link onClick={() => setIsOpen(!isOpen)} to={'/services'} className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10">
           Services
         </Link>
         <Link onClick={() => setIsOpen(!isOpen)} to={'/about'} className="text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out px-10">
@@ -87,7 +87,7 @@ const MobileNav = ({
           className="flex items-center gap-2 cursor-pointer"
         >
           <img src={Logo} alt="Logo" className="w-16 object-cover" />
-          <p className="text-headingColor text-3xl font-bold">Bentilzone</p>
+          <p className="text-headingColor text-3xl font-bold">Chronicles</p>
         </motion.div>
       </Link>
     </div>

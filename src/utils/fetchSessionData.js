@@ -1,27 +1,25 @@
-export const fetchSessionUser = () => {
-  const user =
-    localStorage.getItem("user") !== "undefined"
-      ? JSON.parse(localStorage.getItem("user"))
-      : localStorage.clear();
-
-    return user;
-  // return null
-};
-export const fetchSessionCart = () => {
-  const cartInfo =
-    localStorage.getItem("cartItems") !== "undefined"
-      ? JSON.parse(localStorage.getItem("cartItems"))
-      : localStorage.clear();
-
-    return cartInfo ? cartInfo : [];
+const safeParse = (key, fallback = null) => {
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw == null || raw === "undefined" || raw === "") {
+      return fallback;
+    }
+    return JSON.parse(raw);
+  } catch {
+    localStorage.removeItem(key);
+    return fallback;
+  }
 };
 
-// session usermode
+export const fetchSessionUser = () => safeParse("user", null);
+
+export const fetchSessionCart = () => safeParse("cartItems", []) || [];
+
 export const fetchSessionUserMode = () => {
-  const adminMode =
-    localStorage.getItem("userMode") !== "undefined"
-      ? JSON.parse(localStorage.getItem("adminMode"))
-      : localStorage.clear();
+  // Prefer adminMode; migrate any legacy userMode key
+  const mode = safeParse("adminMode", null);
+  if (mode !== null) return Boolean(mode);
 
-    return adminMode ? adminMode : false;
-}
+  const legacy = safeParse("userMode", false);
+  return Boolean(legacy);
+};

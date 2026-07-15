@@ -14,7 +14,7 @@ const StaticsImages: React.FC<foodItemsStatic> = ({ items }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1.1 }}
             src={item.imgSrc}
-            alt="icecream"
+            alt={item.title}
             className="w-24 lg:w-40 -mt-10 lg:-mt-20"
           />
           <p className="text-base lg:text-lg font-semibold text-textColor">{item.title}</p>
@@ -22,7 +22,7 @@ const StaticsImages: React.FC<foodItemsStatic> = ({ items }) => {
             {item.desc}
           </p>
           <p className="text-sm font-semibold text-headingColor">
-            <span className="text-xs text-red-600">₵</span> {item.price}
+            <span className="text-xs text-red-600">₦</span> {item.price}
           </p>
         </div>
       ))}

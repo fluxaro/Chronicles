@@ -14,7 +14,6 @@ export const SingleFoodItem = ({
 
   return (
     <motion.div
-      whileTap={{ rotate: [0, -1, 1, -1, 0] }}
       className={`${
         !col ? "w-[275px] min-w-[275px]" : "w-[320px] min-w-[320px]"
       } md:w-[300px] md:min-w-[300px] ${
@@ -37,7 +36,7 @@ export const SingleFoodItem = ({
       {admin && (<p className="mt-1 text-sm text-gray-500">{calories} calories </p>)}
         <div className="flex items-center justify-between gap-8 ">
           <p className="text-base text-headingColor font-semibold">
-            <span className="text-sm text-red-600">₵</span> {price}
+            <span className="text-sm text-red-600">₦</span> {price}
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ const CheckoutFooter = () => {
       <div className="flex items-center justify-center gap-2">
         <BsShieldLock className="text-xl text-orange-600" />
         <p className="text-white">
-          Secured by <span className="font-bold text-orange-600">BENSTACK</span>
+          Secured by <span className="font-bold text-orange-600">Chronicles</span>
         </p>
       </div>
     </div>
