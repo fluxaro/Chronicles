@@ -13,7 +13,7 @@ const Story = () => {
             Cooking Abakaliki the way our kitchens remember it
           </h2>
           <p className="text-textColor leading-relaxed">
-            Chronicles started as a small kitchen on Ogoja Road, serving oha,
+            THE PROMISE started as a small kitchen on Ogoja Road, serving oha,
             nsala, and jollof to neighbours who missed home cooking. Today we
             still source local produce, season without shortcuts, and plate
             every dish with the same care.
@@ -32,7 +32,7 @@ const Story = () => {
         <div className="order-1 md:order-2 flex justify-center">
           <img
             src={Cheff}
-            alt="Chronicles kitchen"
+            alt="THE PROMISE"
             className="w-full max-w-md object-contain drop-shadow-md"
           />
         </div>
