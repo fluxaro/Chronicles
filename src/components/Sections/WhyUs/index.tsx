@@ -23,7 +23,7 @@ const WhyUs = () => {
     <section className="w-full my-12 md:my-16" id="why-us">
       <div className="flex flex-col items-center gap-3 mb-10 text-center">
         <p className="text-sm font-medium uppercase tracking-widest text-orange-600">
-          Why Chronicles
+          Why THE PROMISE
         </p>
         <h2 className="text-2xl md:text-3xl font-semibold text-headingColor">
           Food that feels like home
