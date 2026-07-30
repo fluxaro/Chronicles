@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col gap-3">
           <Link to="/" className="flex items-center gap-3 w-fit">
             <img src={Logo} className="w-10 h-10 object-contain" alt="Chronicles" />
-            <span className="text-xl font-semibold text-headingColor">Chronicles</span>
+            <span className="text-xl font-semibold text-headingColor">THE PROMISE</span>
           </Link>
           <p className="text-sm text-textColor leading-relaxed max-w-xs">
             {restaurantInfo.tagline} — Nigerian meals from {restaurantInfo.city},{" "}
