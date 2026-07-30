@@ -12,7 +12,7 @@ const Visit = () => {
             Visit us
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold text-headingColor">
-            Find Chronicles in {city}
+            Find THE PROMISE in {city}
           </h2>
           <p className="text-textColor leading-relaxed">
             Walk in for a plate or call ahead for large orders. We are open
